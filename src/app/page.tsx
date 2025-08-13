@@ -60,8 +60,6 @@ export default function Home() {
   };
 
   if (!hasStarted) {
-    console.log("hasStarted is false, showing Prologue");
-
     return <Prologue onStart={handleStart} />;
   } else {
     return (
