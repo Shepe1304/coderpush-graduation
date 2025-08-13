@@ -18,6 +18,7 @@ export default function Home() {
     new Set()
   );
   const [isEpilogueVisible, setIsEpilogueVisible] = useState(false);
+  const [isGoogleFormVisible, setIsGoogleFormVisible] = useState(false);
   const [showGoogleForm, setShowGoogleForm] = useState(false);
   const sectionsRef = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const scrollProgress = useScrollProgress();
@@ -34,9 +35,17 @@ export default function Home() {
             if (entry.target.id === "epilogue") {
               setIsEpilogueVisible(true);
             }
+
+            if (entry.target.id === "google-form-section") {
+              setIsGoogleFormVisible(true);
+            }
           } else {
             if (entry.target.id === "epilogue") {
               setIsEpilogueVisible(false);
+            }
+
+            if (entry.target.id === "google-form-section") {
+              setIsGoogleFormVisible(false);
             }
           }
         });
@@ -68,7 +77,9 @@ export default function Home() {
       <div>
         <div
           className={`fixed right-0 top-0 w-3 h-full bg-gray-300/30 z-50 transition-opacity duration-500 pointer-events-none ${
-            isEpilogueVisible ? "opacity-0" : "opacity-100"
+            isEpilogueVisible || isGoogleFormVisible
+              ? "opacity-0"
+              : "opacity-100"
           }`}
         >
           <div
@@ -87,7 +98,7 @@ export default function Home() {
           <Navigation isVisible={hasStarted} />
           <ProgressBar
             progress={scrollProgress}
-            isVisible={hasStarted && !isEpilogueVisible}
+            isVisible={hasStarted && !isEpilogueVisible && !isGoogleFormVisible}
           />
 
           <div id="story-content" className="bg-gray-50 relative z-10">

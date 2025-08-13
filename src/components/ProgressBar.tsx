@@ -17,7 +17,7 @@ export const ProgressBar = ({ progress, isVisible }: ProgressBarProps) => {
       animate={{ opacity: 1, y: 0 }}
       className="fixed bottom-6 left-1/2 z-50 w-80 -translate-x-1/2 transform"
     >
-      <div className="rounded-2xl border border-white/10 bg-cp-navy/90 p-4 shadow-xl backdrop-blur">
+      <div className="rounded-2xl border border-white/10 bg-cp-navy/90 py-4 pl-8 pr-10 shadow-xl backdrop-blur">
         <div className="relative">
           <div className="h-4 w-full rounded-full border border-white/10 bg-white/5">
             <motion.div
@@ -41,7 +41,7 @@ export const ProgressBar = ({ progress, isVisible }: ProgressBarProps) => {
         </div>
 
         <div className="mt-3 text-center text-sm font-medium text-white">
-          Pioneer Journey:{" "}
+          Internship Journey:{" "}
           <span className="text-cp-lime">{Math.round(progress)}%</span> Complete
         </div>
       </div>
