@@ -72,8 +72,8 @@ coderpush-graduation/
    ```typescript
    export const interns: InternProfile[] = [
      {
-       name: "Duc Hung",
-       avatar: "/interns/duc_hung.png",
+       name: "Quỳnh Giang",
+       avatar: "/interns/quynh_giang.png",
        message: "This internship has been incredible! 🚀" // ← Edit this
      },
      // ... other interns
@@ -97,6 +97,7 @@ coderpush-graduation/
    - `mia.png`
    - `minh_tuan.png`
    - `quynh_anh.png`
+   - `quynh_giang.png`
 
 > 💡 **Tip:** Keep the same filename to avoid updating code, or update both the file and the `avatar` path in `story.ts`
 
