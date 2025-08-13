@@ -78,6 +78,14 @@ export const Navigation = ({ isVisible }: NavigationProps) => {
               >
                 🎓 Graduation
               </button>
+
+              <button
+                onClick={() => scrollToSection("google-form-section")}
+                className="group w-full text-left font-semibold text-black transition-colors mt-2"
+              >
+                💚 Leave a Message for Interns!
+                <span className="block h-0.5 bg-gradient-to-r from-cp-lime to-cp-primary scale-x-0 scale-x-100 transition-transform origin-left"></span>
+              </button>
             </div>
           </motion.div>
         )}

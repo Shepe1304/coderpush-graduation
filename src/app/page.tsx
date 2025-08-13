@@ -10,6 +10,7 @@ import { WeekDivider } from "@/components/WeekDivider";
 import { Navigation } from "@/components/Navigation";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import { weeklyContent } from "@/data/story";
+import { GoogleForm } from "@/components/sections/GoogleForm";
 
 export default function Home() {
   const [hasStarted, setHasStarted] = useState(false);
@@ -17,6 +18,7 @@ export default function Home() {
     new Set()
   );
   const [isEpilogueVisible, setIsEpilogueVisible] = useState(false);
+  const [showGoogleForm, setShowGoogleForm] = useState(false);
   const sectionsRef = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const scrollProgress = useScrollProgress();
 
@@ -119,6 +121,7 @@ export default function Home() {
                 ))}
               </div>
             ))}
+
             <div
               id="epilogue"
               ref={(el) => {
@@ -127,21 +130,21 @@ export default function Home() {
             >
               <Epilogue isVisible={visibleSections.has("epilogue")} />
             </div>
+
+            <div
+              id="google-form-section"
+              ref={(el) => {
+                sectionsRef.current["google-form-section"] = el;
+              }}
+            >
+              <GoogleForm
+                isVisible={visibleSections.has("google-form-section")}
+                showForm={showGoogleForm}
+                handleShowForm={setShowGoogleForm}
+              />
+            </div>
           </div>
         </div>
-
-        <style jsx global>{`
-          /* Hide default scrollbar */
-          ::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-          }
-
-          html {
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
-          }
-        `}</style>
       </div>
     );
   }
