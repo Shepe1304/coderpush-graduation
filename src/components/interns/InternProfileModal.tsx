@@ -104,7 +104,7 @@ export default function InternProfileModal({ intern, isOpen, onClose }: Props) {
                   Personal Message
                 </h3>
                 <p className="text-sm italic text-zinc-700 dark:text-zinc-300">
-                  "{intern.message}"
+                  &ldquo;{intern.message}&rdquo;
                 </p>
               </div>
             )}
