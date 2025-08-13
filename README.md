@@ -12,7 +12,6 @@ An interactive scroll-telling website celebrating our amazing internship journey
 - **Paper Airplane Progress**: Flying airplane that transforms into a progress indicator
 - **Week-by-Week Highlights**: Structured content showing growth and milestones
 - **Personal Graduation Cards**: Individual messages from each intern
-- **Responsive Design**: Beautiful experience on all devices
 - **Modern Animations**: Smooth Framer Motion animations throughout
 - **Professional Branding**: CoderPush color scheme and visual identity
 
