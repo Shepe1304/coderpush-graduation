@@ -24,11 +24,9 @@ export const Prologue = ({ onStart }: PrologueProps) => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-cp-navy via-[#122638] to-[#0B1621] text-white">
-      {/* soft lime glows */}
       <div className="pointer-events-none absolute -top-24 -left-24 h-[26rem] w-[26rem] rounded-full bg-cp-lime/15 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 -right-24 h-[28rem] w-[28rem] rounded-full bg-cp-lime/10 blur-3xl" />
 
-      {/* subtle lime grid */}
       <div className="pointer-events-none absolute inset-0 opacity-10 [background-image:linear-gradient(to_right,theme(colors.cp.lime/20)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.cp.lime/20)_1px,transparent_1px)] [background-size:36px_36px]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
@@ -87,7 +85,6 @@ export const Prologue = ({ onStart }: PrologueProps) => {
             <PaperAirplane isFlying={isFlying} />
           </motion.button>
 
-          {/* avatars */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -98,26 +95,8 @@ export const Prologue = ({ onStart }: PrologueProps) => {
               Meet the Interns
             </p>
             <InternGrid interns={interns} />
-            {/* <div className="flex justify-center gap-6">
-              {["👨‍💻", "👩‍💻", "👨‍💻", "👩‍💻", "👨‍💻"].map((avatar, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ delay: 1.7 + i * 0.1, duration: 0.4 }}
-                  whileHover={{ scale: 1.2, y: -12 }}
-                  className="group relative cursor-pointer"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-3xl backdrop-blur-sm transition-all duration-300 group-hover:border-cp-lime/40">
-                    {avatar}
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-cp-lime opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </motion.div>
-              ))}
-            </div> */}
           </motion.div>
 
-          {/* floating code bits */}
           <motion.div
             animate={{ y: [0, -10, 0], opacity: [0.25, 0.6, 0.25] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}

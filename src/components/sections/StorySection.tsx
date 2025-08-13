@@ -21,7 +21,7 @@ export const StorySection = ({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"], // 0 when container enters, 1 when it leaves
+    offset: ["start end", "end start"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
@@ -32,32 +32,24 @@ export const StorySection = ({
     if (isVisible && !hasAnimated) setHasAnimated(true);
   }, [isVisible, hasAnimated]);
 
-  // Calculate opacity based on scroll progress
   const getOpacity = () => {
     if (scrollProgress < 0.2) {
-      // Fade in phase: 0 to 1 opacity
       return scrollProgress / 0.2;
     } else if (scrollProgress < fadeOutStart) {
-      // Sticky phase: full opacity
       return 1;
     } else {
-      // Fade out phase: 1 to 0 opacity
       const fadeProgress = (scrollProgress - fadeOutStart) / (1 - fadeOutStart);
       return Math.max(0, 1 - fadeProgress);
     }
   };
 
-  // Calculate Y position for smooth transitions
   const getYPosition = () => {
     if (scrollProgress < 0.15) {
-      // Fade in: slide up
       return 40 * (1 - scrollProgress / 0.15);
     } else if (scrollProgress > fadeOutStart) {
-      // Fade out: slide down
       const fadeProgress = (scrollProgress - fadeOutStart) / (1 - fadeOutStart);
       return 40 * fadeProgress;
     }
-    // Sticky phase: centered
     return 0;
   };
 
@@ -66,7 +58,6 @@ export const StorySection = ({
 
   return (
     <section ref={containerRef} className="relative min-h-[200vh] py-50">
-      {/* Always sticky positioning */}
       <div className="sticky top-1/2 -translate-y-1/2 transform mx-auto max-w-4xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.98 }}
@@ -78,7 +69,6 @@ export const StorySection = ({
           transition={{ duration: 0.1, ease: "easeOut" }}
           className="relative text-center"
         >
-          {/* Card surface */}
           <div className="relative rounded-3xl bg-cp-white shadow-sm border border-black/5">
             <div className="pointer-events-none absolute -inset-1 rounded-[1.6rem] bg-gradient-to-r from-cp-lime/10 to-cp-primary/10 blur-xl" />
             <div className="relative p-8 sm:p-12">
@@ -114,28 +104,6 @@ export const StorySection = ({
               </motion.p>
             </div>
           </div>
-
-          {/* Floating rocket - only visible during sticky phase */}
-          {opacity > 0.3 && (
-            <motion.div
-              animate={{
-                y: [0, -12, 0],
-                rotate: [0, 15, -15, 0],
-                scale: [1, 1.15, 1],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                repeatType: "reverse",
-                delay: 2,
-                ease: "easeInOut",
-              }}
-              style={{ opacity: opacity * 0.25 }}
-              className="absolute bottom-1/4 left-1/3 text-3xl text-cp-lime"
-            >
-              🚀
-            </motion.div>
-          )}
         </motion.div>
       </div>
     </section>
