@@ -46,7 +46,7 @@ export const weeklyContent: WeekContent[] = [
     sections: [
       {
         id: "arrival",
-        title: "Welcome to the Future",
+        title: "Welcome to the Party",
         content:
           "Introductions all around—five interns meeting each other for the first time and stepping into CoderPush’s world. Excitement was high, and laptops were ready for the challenges ahead.",
         type: "act",

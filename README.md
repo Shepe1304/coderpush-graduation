@@ -48,6 +48,7 @@ coderpush-graduation/
 │       ├── duc_hung.png
 │       ├── mia.png
 │       ├── minh_tuan.png
+│       ├── quynh_giang.png
 │       └── quynh_anh.png
 └── README.md
 ```
