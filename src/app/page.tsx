@@ -1,103 +1,155 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import { Prologue } from "@/components/sections/Prologue";
+import { StorySection } from "@/components/sections/StorySection";
+import { Epilogue } from "@/components/sections/Epilogue";
+import { ProgressBar } from "@/components/ProgressBar";
+import { FloatingElements } from "@/components/FloatingElements";
+import { WeekDivider } from "@/components/WeekDivider";
+import { Navigation } from "@/components/Navigation";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
+import { weeklyContent } from "@/data/story";
+import { StorySection as StorySectionType } from "@/types";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  const [hasStarted, setHasStarted] = useState(false);
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(
+    new Set()
   );
+  const [isEpilogueVisible, setIsEpilogueVisible] = useState(false);
+  const sectionsRef = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const scrollProgress = useScrollProgress();
+
+  const allSections: StorySectionType[] = weeklyContent
+    .flatMap((week) => week.sections)
+    .sort((a, b) => a.order - b.order);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+
+            if (entry.target.id === "epilogue") {
+              setIsEpilogueVisible(true);
+            }
+          } else {
+            if (entry.target.id === "epilogue") {
+              setIsEpilogueVisible(false);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    Object.values(sectionsRef.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  const handleStart = () => {
+    setHasStarted(true);
+    setTimeout(() => {
+      const firstSection = document.getElementById("story-content");
+      if (firstSection) {
+        firstSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  if (!hasStarted) {
+    console.log("hasStarted is false, showing Prologue");
+
+    return <Prologue onStart={handleStart} />;
+  } else {
+    return (
+      <div>
+        <div
+          className={`fixed right-0 top-0 w-3 h-full bg-gray-300/30 z-50 transition-opacity duration-500 pointer-events-none ${
+            isEpilogueVisible ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <div
+            className="bg-gray-600 w-full rounded-full transition-all duration-200"
+            style={{
+              height: `${Math.min(100, scrollProgress * 100)}%`,
+              transform: `translateY(${
+                scrollProgress * (100 - Math.min(100, scrollProgress * 100))
+              }%)`,
+            }}
+          />
+        </div>
+
+        <div className="relative">
+          <FloatingElements />
+          <Navigation isVisible={hasStarted} />
+          <ProgressBar
+            progress={scrollProgress}
+            isVisible={hasStarted && !isEpilogueVisible}
+          />
+
+          <div id="story-content" className="bg-gray-50 relative z-10">
+            {weeklyContent.map((week) => (
+              <div key={week.week}>
+                <div
+                  id={`week-${week.week}`}
+                  ref={(el) => {
+                    sectionsRef.current[`week-${week.week}`] = el;
+                  }}
+                >
+                  <WeekDivider
+                    weekNumber={week.week}
+                    title={week.title}
+                    isVisible={visibleSections.has(`week-${week.week}`)}
+                  />
+                </div>
+                {week.sections.map((section) => (
+                  <div
+                    key={section.id}
+                    id={section.id}
+                    ref={(el) => {
+                      sectionsRef.current[section.id] = el;
+                    }}
+                  >
+                    <StorySection
+                      section={section}
+                      isVisible={visibleSections.has(section.id)}
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+            <div
+              id="epilogue"
+              ref={(el) => {
+                sectionsRef.current["epilogue"] = el;
+              }}
+            >
+              <Epilogue isVisible={visibleSections.has("epilogue")} />
+            </div>
+          </div>
+        </div>
+
+        <style jsx global>{`
+          /* Hide default scrollbar */
+          ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+          }
+
+          html {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+          }
+        `}</style>
+      </div>
+    );
+  }
 }
