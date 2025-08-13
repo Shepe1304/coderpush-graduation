@@ -13,15 +13,12 @@ export default function InternProfileModal({ intern, isOpen, onClose }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Modal */}
       <div className="relative w-full max-w-lg rounded-2xl bg-white shadow-2xl dark:bg-zinc-900 max-h-[90vh] overflow-hidden">
-        {/* Close button */}
         <button
           onClick={onClose}
           className="absolute right-4 top-4 rounded-full p-2 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
@@ -42,10 +39,8 @@ export default function InternProfileModal({ intern, isOpen, onClose }: Props) {
           </svg>
         </button>
 
-        {/* Profile content */}
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-2rem)]">
           <div className="text-center">
-            {/* Avatar */}
             <div className="relative mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full ring-4 ring-zinc-200 dark:ring-zinc-700">
               <Image
                 src={intern.avatar || "/default-avatar.png"}
@@ -57,12 +52,10 @@ export default function InternProfileModal({ intern, isOpen, onClose }: Props) {
               />
             </div>
 
-            {/* Name */}
             <h2 className="mb-4 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
               {intern.fullName}
             </h2>
 
-            {/* Role and Project */}
             {intern.role && (
               <div className="mb-4">
                 <p className="text-lg font-semibold text-zinc-700 dark:text-zinc-300">
@@ -76,7 +69,6 @@ export default function InternProfileModal({ intern, isOpen, onClose }: Props) {
               </div>
             )}
 
-            {/* Mentor */}
             {intern.mentor && (
               <div className="mb-4">
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">
@@ -85,7 +77,6 @@ export default function InternProfileModal({ intern, isOpen, onClose }: Props) {
               </div>
             )}
 
-            {/* Bio */}
             {intern.bio && (
               <div className="mb-6 text-left">
                 <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
@@ -97,7 +88,6 @@ export default function InternProfileModal({ intern, isOpen, onClose }: Props) {
               </div>
             )}
 
-            {/* Message */}
             {intern.message && (
               <div className="rounded-lg bg-zinc-50 p-4 dark:bg-zinc-800">
                 <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
