@@ -4,14 +4,18 @@ import { InternProfile } from "@/types";
 
 type Props = {
   intern: InternProfile;
-  onClick?: () => void;
+  onOpenProfile: () => void;
   index: number;
 };
 
-export default function InternProfileCard({ intern, onClick, index }: Props) {
+export default function InternProfileCard({
+  intern,
+  onOpenProfile,
+  index,
+}: Props) {
   return (
     <div
-      onClick={onClick}
+      onClick={onOpenProfile}
       className="group relative w-full rounded-2xl bg-white/70 p-4 shadow-sm ring-1 ring-zinc-200 transition-all hover:-translate-y-0.5 dark:bg-zinc-900/70 dark:ring-zinc-800 cursor-pointer"
       aria-label={`Open profile for ${intern.name}`}
       key={index}
@@ -32,7 +36,7 @@ export default function InternProfileCard({ intern, onClick, index }: Props) {
           <h3 className="truncate text-base font-semibold text-zinc-900 dark:text-zinc-50">
             {intern.name}
           </h3>
-          <p className="mt-1 line-clamp-4 text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
             {intern.message}
           </p>
         </div>

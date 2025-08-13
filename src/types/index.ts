@@ -17,6 +17,11 @@ export interface WeekContent {
 
 export interface InternProfile {
   name: string;
+  fullName: string;
   avatar?: string;
   message?: string;
+  role?: string;
+  project?: string;
+  mentor?: string;
+  bio?: string;
 }
