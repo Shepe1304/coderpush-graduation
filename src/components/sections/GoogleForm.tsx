@@ -66,13 +66,15 @@ export function GoogleForm({
             <h2 className="mb-4 text-4xl font-extrabold leading-tight text-cp-ink md:text-5xl">
               Share Your{" "}
               <span className="relative">
-                <span className="text-cp-ink">Story</span>
+                <span className="text-cp-ink">Message</span>
                 <span className="absolute -bottom-2 left-0 h-1 w-full rounded-full bg-gradient-to-r from-cp-lime to-cp-primary/80" />
               </span>
             </h2>
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-cp-ink/80 md:text-xl">
-              Your journey matters. Help us understand your experience and
-              improve the program for future pioneers.
+              Please take a few minutes to share anything you’d like -- advice,
+              encouragement, a funny story, or simply a goodbye. Your words will
+              mean a lot to us, and we will even feature them on this Graduation
+              Page (with your permission).
             </p>
           </div>
 

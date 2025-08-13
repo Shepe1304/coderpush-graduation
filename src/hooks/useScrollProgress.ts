@@ -11,7 +11,7 @@ export const useScrollProgress = () => {
       const winHeightPx =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
-      const scrolled = ((scrollPx + 1000) / winHeightPx) * 100;
+      const scrolled = ((scrollPx + 2000) / winHeightPx) * 100;
       setScrollProgress(Math.min(100, Math.max(0, scrolled)));
     };
 
