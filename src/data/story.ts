@@ -152,7 +152,7 @@ export const weeklyContent: WeekContent[] = [
         id: "stack-mastery",
         title: "First Tickets Done",
         content:
-          "Mia completed her first Orchestars ticket. Giang enhanced her feature for mobile responsiveness and began learning system design.",
+          "Mia completed her first OrcheSTARS ticket. Giang enhanced her feature for mobile responsiveness and began learning system design.",
         type: "act",
         order: 11,
       },
