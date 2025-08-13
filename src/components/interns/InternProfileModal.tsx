@@ -59,7 +59,7 @@ export default function InternProfileModal({ intern, isOpen, onClose }: Props) {
 
             {/* Name */}
             <h2 className="mb-4 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
-              {intern.name}
+              {intern.fullName}
             </h2>
 
             {/* Role and Project */}
