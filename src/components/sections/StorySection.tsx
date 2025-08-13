@@ -7,7 +7,6 @@ import { StorySection as StorySectionType } from "@/types";
 interface StorySectionProps {
   section: StorySectionType;
   isVisible: boolean;
-  /** % (0–1) of the section scrolled before starting fade out */
   fadeOutStart?: number;
 }
 

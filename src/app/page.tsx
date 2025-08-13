@@ -10,7 +10,6 @@ import { WeekDivider } from "@/components/WeekDivider";
 import { Navigation } from "@/components/Navigation";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import { weeklyContent } from "@/data/story";
-import { StorySection as StorySectionType } from "@/types";
 
 export default function Home() {
   const [hasStarted, setHasStarted] = useState(false);
@@ -20,10 +19,6 @@ export default function Home() {
   const [isEpilogueVisible, setIsEpilogueVisible] = useState(false);
   const sectionsRef = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const scrollProgress = useScrollProgress();
-
-  const allSections: StorySectionType[] = weeklyContent
-    .flatMap((week) => week.sections)
-    .sort((a, b) => a.order - b.order);
 
   useEffect(() => {
     if (!hasStarted) return;
