@@ -5,7 +5,7 @@ export const interns: InternProfile[] = [
     name: "Đức Hùng",
     fullName: "Lương Đức Hùng",
     avatar: "/interns/duc_hung.png",
-    message: "(Insert message here)",
+    message: "Thank you to everyone at CoderPush for making this summer truly unforgettable. I'm grateful for the support, mentorship, and encouragement from the entire company.",
     role: "Software Engineering Intern",
     project: "OrcheSTARS, AI POC",
     mentor: "Anh Hector",
@@ -256,7 +256,7 @@ export const weeklyContent: WeekContent[] = [
         id: "deep-dives",
         title: "Learning & Shipping",
         content:
-          "Hùng presented his first tech talk. Giang explored RESTful APIs, CORS, API authentication, and rate limiting. Tuấn implemented image upload to AWS S3 and set up EC2 to deploy the AI project.",
+          "Mia presented her first tech talk. Giang explored RESTful APIs, CORS, API authentication, and rate limiting. Tuấn implemented image upload to AWS S3. Hùng set up EC2 to deploy the AI project.",
         type: "act",
         order: 18,
       },
@@ -270,7 +270,7 @@ export const weeklyContent: WeekContent[] = [
         id: "closing-notes",
         title: "Wrapping It Up",
         content:
-          "Mia delivered her first tech talk. Giang worked on E2E testing. The team wrapped up tasks and prepared for graduation.",
+          "Hùng delivered his first tech talk. Giang worked on E2E testing. The team wrapped up tasks and prepared for graduation.",
         type: "act",
         order: 19,
       },
