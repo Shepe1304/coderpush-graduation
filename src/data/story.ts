@@ -5,51 +5,56 @@ export const interns: InternProfile[] = [
     name: "Đức Hùng",
     fullName: "Lương Đức Hùng",
     avatar: "/interns/duc_hung.png",
-    message: "Thank you to everyone at CoderPush for making this summer truly unforgettable. I'm grateful for the support, mentorship, and encouragement from the entire company.",
+    message:
+      "Thank you to everyone at CoderPush for making this summer truly unforgettable. I'm grateful for the support, mentorship, and encouragement from the entire company.",
     role: "Software Engineering Intern",
     project: "OrcheSTARS, AI POC",
     mentor: "Anh Hector",
-    bio: "I’m Duc Hung, a sophomore at Michigan State University who loves movies, board games, music, and playing piano. I also enjoy sports like badminton and table tennis. My strengths lie in hard work, curiosity, and problem-solving, and I’m eager to join technical discussions to sharpen these skills. I tend to be quiet at first but am always listening closely, and I hope this internship at CoderPush will help me speak up more, learn new technical and soft skills, and connect with everyone while making great memories along the way."
+    bio: "I’m Duc Hung, a sophomore at Michigan State University who loves movies, board games, music, and playing piano. I also enjoy sports like badminton and table tennis. My strengths lie in hard work, curiosity, and problem-solving, and I’m eager to join technical discussions to sharpen these skills. I tend to be quiet at first but am always listening closely, and I hope this internship at CoderPush will help me speak up more, learn new technical and soft skills, and connect with everyone while making great memories along the way.",
   },
   {
     name: "Quỳnh Giang",
     fullName: "Hồ Quỳnh Giang",
     avatar: "/interns/quynh_giang.png",
-    message: "Greatest gratitude to dear mentors, fellow interns, and everyone at CP for being an unforgettable part of this wonderful summer!",
+    message:
+      "Greatest gratitude to dear mentors, fellow interns, and everyone at CP for being an unforgettable part of this wonderful summer!",
     role: "Software Engineering Intern",
     project: "Pulse",
     mentor: "Chị Minh Châu",
-    bio: "Howdy-ho! I’m Giang Ho, a 19-year-old software engineer currently exploring full-stack development with tools like React, Python, C#, and SQL. I love building fun, creative things — whether it's websites, doodles, or funny soundtracks. I thrive in collaborative spaces, especially group games (TeamFight Tactics, anyone?), and I live by the values of empathy, communication, and responsibility. While I’m still working on speaking up more, I’m eager to grow, learn, and connect during this internship — and hopefully make some amazing friends and memories along the way!"
+    bio: "Howdy-ho! I’m Giang Ho, a 19-year-old software engineer currently exploring full-stack development with tools like React, Python, C#, and SQL. I love building fun, creative things — whether it's websites, doodles, or funny soundtracks. I thrive in collaborative spaces, especially group games (TeamFight Tactics, anyone?), and I live by the values of empathy, communication, and responsibility. While I’m still working on speaking up more, I’m eager to grow, learn, and connect during this internship — and hopefully make some amazing friends and memories along the way!",
   },
   {
     name: "Quỳnh Anh",
     fullName: "Vũ Ngọc Quỳnh Anh",
     avatar: "/interns/quynh_anh.png",
-    message: "(This is what I remember chị Quỳnh Anh saying until she gives a new one :D) Thank you very much, everyone at CoderPush. The time here with everyone has been truly amazing, and I’m grateful for all the support and guidance you’ve given me.",
+    message:
+      "(This is what I remember chị Quỳnh Anh saying until she gives a new one :D) Thank you very much, everyone at CoderPush. The time here with everyone has been truly amazing, and I’m grateful for all the support and guidance you’ve given me.",
     role: "Generalist Intern",
     project: "Operations & Marketing",
     mentor: "Chị Phương Anh",
-    bio: "Hi, I’m Vũ Ngọc Quỳnh Anh, a junior at National Economics University majoring in Finance. I’m easy-going, patient, and thrive in collaborative environments, with strong communication, time management, and organizational skills. While I can be reserved and risk-averse at first, I’m working on stepping up and believe CoderPush’s energy will inspire me. I’m passionate about the arts—especially performance arts and music—and have co-organized and performed in musicals and student-led shows. I also enjoy reading emotional novels, playing a bit of table tennis, and connecting with new people. I’m excited to learn, contribute, and grow with everyone at CoderPush."
+    bio: "Hi, I’m Vũ Ngọc Quỳnh Anh, a junior at National Economics University majoring in Finance. I’m easy-going, patient, and thrive in collaborative environments, with strong communication, time management, and organizational skills. While I can be reserved and risk-averse at first, I’m working on stepping up and believe CoderPush’s energy will inspire me. I’m passionate about the arts—especially performance arts and music—and have co-organized and performed in musicals and student-led shows. I also enjoy reading emotional novels, playing a bit of table tennis, and connecting with new people. I’m excited to learn, contribute, and grow with everyone at CoderPush.",
   },
   {
     name: "Minh Tuấn",
     fullName: "Phạm Trần Minh Tuấn",
     avatar: "/interns/minh_tuan.png",
-    message: "My heartfelt thanks to everyone at CoderPush who's been part of this amazing journey. In just three months, I've grown both technically and professionally.",
+    message:
+      "My heartfelt thanks to everyone at CoderPush who's been part of this amazing journey. In just three months, I've grown both technically and professionally.",
     role: "Software Engineering Intern",
     project: "Groopl, AI POC",
     mentor: "Anh Kim Long",
-    bio: "I’m Tuan, a first-year Computer Science student diving into fullstack development, with a focus on backend work. I love tackling challenging problems and sticking with them until they’re solved. Outside of coding, I enjoy playing table tennis—always up for a fun match! I value perseverance, curiosity, and teamwork, and I’m working on speaking up more confidently. I’m super excited to learn from everyone, improve my technical and soft skills, and get a real glimpse into how software is built in a professional environment. Looking forward to making great connections, learning a ton, and having a memorable internship experience!"
+    bio: "I’m Tuan, a first-year Computer Science student diving into fullstack development, with a focus on backend work. I love tackling challenging problems and sticking with them until they’re solved. Outside of coding, I enjoy playing table tennis—always up for a fun match! I value perseverance, curiosity, and teamwork, and I’m working on speaking up more confidently. I’m super excited to learn from everyone, improve my technical and soft skills, and get a real glimpse into how software is built in a professional environment. Looking forward to making great connections, learning a ton, and having a memorable internship experience!",
   },
   {
     name: "Mia",
     fullName: "Phạm Minh Hà",
     avatar: "/interns/mia.png",
-    message: "Thank you everyone for this amazing summer! I’m truly greatful for the guidance and support you’ve given me!",
+    message:
+      "Thank you everyone for this amazing summer! I’m truly greatful for the guidance and support you’ve given me!",
     role: "Software Engineering Intern",
     project: "OrcheSTARS",
     mentor: "Anh Văn Hùng",
-    bio: "Hi everyone! I’m Minh Ha (Mia), born in 2006, and I’m excited to join CoderPush as a Software Engineering Intern this summer. I love learning, tackling new challenges, and growing both technically and personally. I’m working on being more outgoing and building connections, as teamwork is key in software engineering. Outside of work, I enjoy reading and origami—let’s fold some paper together! Looking forward to learning, growing, and connecting with everyone over these three months."
+    bio: "Hi everyone! I’m Minh Ha (Mia), born in 2006, and I’m excited to join CoderPush as a Software Engineering Intern this summer. I love learning, tackling new challenges, and growing both technically and personally. I’m working on being more outgoing and building connections, as teamwork is key in software engineering. Outside of work, I enjoy reading and origami—let’s fold some paper together! Looking forward to learning, growing, and connecting with everyone over these three months.",
   },
 ];
 
@@ -220,7 +225,7 @@ export const weeklyContent: WeekContent[] = [
         id: "pr-marathon",
         title: "Fast Iterations",
         content:
-          "Mia created four PRs for Affiliate Dashboard’s Revenue and Events pages, improving them through mentor and AI reviews.",
+          "Giang grasped core and advanced API concepts. Mia created four PRs for Affiliate Dashboard’s Revenue and Events pages, improving them through mentor and AI reviews.",
         type: "act",
         order: 15,
       },
@@ -229,6 +234,13 @@ export const weeklyContent: WeekContent[] = [
         title: "An Early Graduation",
         content:
           "Quỳnh Anh gave her first tech talk before graduating early. Hùng began work on a mock membership points and user profile page.",
+        type: "act",
+        order: 16,
+      },
+      {
+        id: "disney-concert",
+        title: "A Magical Experience",
+        content: `"Once Upon A Time" Disney Concert by OrcheSTARS featuring Dustin Tiêu was a highlight, bringing the team together for a night of music and fun. It was a moment to remember as they celebrated their hard work and achievements.`,
         type: "act",
         order: 16,
       },
