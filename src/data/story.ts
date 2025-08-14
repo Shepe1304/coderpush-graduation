@@ -17,7 +17,7 @@ export const interns: InternProfile[] = [
     fullName: "Hồ Quỳnh Giang",
     avatar: "/interns/quynh_giang.png",
     message:
-      "Greatest gratitude to dear mentors, fellow interns, and everyone at CP for being an unforgettable part of this wonderful summer!",
+      "Greatest gratitude to dear mentors, fellow interns, and everyone at CP for being an unforgettable part of this wonderful summer of coding, learning, and growing together.",
     role: "Software Engineering Intern",
     project: "Pulse",
     mentor: "Chị Minh Châu",
