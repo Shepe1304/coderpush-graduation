@@ -256,7 +256,7 @@ export const weeklyContent: WeekContent[] = [
         id: "deep-dives",
         title: "Learning & Shipping",
         content:
-          "Mia presented his first tech talk. Giang explored RESTful APIs, CORS, API authentication, and rate limiting. Tuấn implemented image upload to AWS S3. Hùng set up EC2 to deploy the AI project.",
+          "Mia presented her first tech talk. Giang explored RESTful APIs, CORS, API authentication, and rate limiting. Tuấn implemented image upload to AWS S3. Hùng set up EC2 to deploy the AI project.",
         type: "act",
         order: 18,
       },
